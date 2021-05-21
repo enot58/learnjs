@@ -1,0 +1,71 @@
+/*function matrixArray(rows,columns){
+    var arr = new Array();
+    for(var i=0; i<rows; i++){
+        arr[i] = new Array();
+        for(var j=0; j<columns; j++){
+            arr[i][j] = i+j+1;//вместо i+j+1 пишем любой наполнитель. В простейшем случае - null
+        }
+    }
+    return arr;
+}
+var myMatrix = matrixArray(3,3);
+console.log(myMatrix)
+
+function matrixNew(row, column) {
+    let arr = new Array();
+    for (let i = 0; i < row; i++){
+        arr[i] = new Array();
+        for (let j = 0; j < column; j++) {
+            arr[i][j] = 0;
+        }
+    }
+    return arr;
+}*/
+
+/*let n = matrixNew(3, 3);
+console.log(n)
+
+n[0][0] = 0.5;
+console.log(n)*/
+
+
+class CreateMatrix {
+    constructor(rows, column) {
+        this.rows = rows;
+        this.column = column;
+        this.arr = this.initMatrix();
+        //this.matrix = new Array();
+    }
+
+    initMatrix () {
+        let arr = new Array();
+        for (let i = 0; i < this.rows; i++){
+            arr[i] = new Array();
+            for (let j = 0; j < this.column; j++) {
+                arr[i][j] = 0;
+            }
+        }
+        // console.log(arr);
+        return arr;
+    }
+
+    log () {
+        this.initMatrix();
+        console.log(this.initMatrix())
+    }
+
+    renameRow (row, numbColumn, value) {
+        
+        let matrix = this.initMatrix();
+        matrix[row][numbColumn] = value;
+        console.log(this.matrix);
+    }
+
+}
+
+let newMatrix = new CreateMatrix(3, 3);
+console.log(newMatrix.initMatrix())
+// newMatrix.log();
+newMatrix.renameRow(0 ,0, 0.5);
+newMatrix.renameRow(0 ,1, 0.6);
+newMatrix.renameRow(0 ,2, 0.3);
